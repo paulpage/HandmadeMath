@@ -1,2 +1,2 @@
-#include "HandmadeMath.c"
+#include "handmade_math.c"
 // C++ compilers complain when compiling a .c file...

@@ -2,4 +2,4 @@
 #include "HandmadeTest.h"
 #endif
 
-#include "../HandmadeMath.h"
+#include "../handmade_math.h"

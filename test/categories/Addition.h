@@ -2,228 +2,228 @@
 
 TEST(Addition, Vec2)
 {
-    HMM_Vec2 v2_1 = HMM_V2(1.0f, 2.0f);
-    HMM_Vec2 v2_2 = HMM_V2(3.0f, 4.0f);
+    Vec2 v2_1 = V2(1.0f, 2.0f);
+    Vec2 v2_2 = V2(3.0f, 4.0f);
 
     {
-        HMM_Vec2 result = HMM_AddV2(v2_1, v2_2);
-        EXPECT_FLOAT_EQ(result.X, 4.0f);
-        EXPECT_FLOAT_EQ(result.Y, 6.0f);
+        Vec2 result = add_v2(v2_1, v2_2);
+        EXPECT_FLOAT_EQ(result.x, 4.0f);
+        EXPECT_FLOAT_EQ(result.y, 6.0f);
     }
 #ifdef __cplusplus
     {
-        HMM_Vec2 result = HMM_Add(v2_1, v2_2);
-        EXPECT_FLOAT_EQ(result.X, 4.0f);
-        EXPECT_FLOAT_EQ(result.Y, 6.0f);
+        Vec2 result = add(v2_1, v2_2);
+        EXPECT_FLOAT_EQ(result.x, 4.0f);
+        EXPECT_FLOAT_EQ(result.y, 6.0f);
     }
     {
-        HMM_Vec2 result = v2_1 + v2_2;
-        EXPECT_FLOAT_EQ(result.X, 4.0f);
-        EXPECT_FLOAT_EQ(result.Y, 6.0f);
+        Vec2 result = v2_1 + v2_2;
+        EXPECT_FLOAT_EQ(result.x, 4.0f);
+        EXPECT_FLOAT_EQ(result.y, 6.0f);
     }
 
     v2_1 += v2_2;
-    EXPECT_FLOAT_EQ(v2_1.X, 4.0f);
-    EXPECT_FLOAT_EQ(v2_1.Y, 6.0f);
+    EXPECT_FLOAT_EQ(v2_1.x, 4.0f);
+    EXPECT_FLOAT_EQ(v2_1.y, 6.0f);
 #endif
 }
 
 TEST(Addition, Vec3)
 {
-    HMM_Vec3 v3_1 = HMM_V3(1.0f, 2.0f, 3.0f);
-    HMM_Vec3 v3_2 = HMM_V3(4.0f, 5.0f, 6.0f);
+    Vec3 v3_1 = V3(1.0f, 2.0f, 3.0f);
+    Vec3 v3_2 = V3(4.0f, 5.0f, 6.0f);
 
     {
-        HMM_Vec3 result = HMM_AddV3(v3_1, v3_2);
-        EXPECT_FLOAT_EQ(result.X, 5.0f);
-        EXPECT_FLOAT_EQ(result.Y, 7.0f);
-        EXPECT_FLOAT_EQ(result.Z, 9.0f);
+        Vec3 result = add_v3(v3_1, v3_2);
+        EXPECT_FLOAT_EQ(result.x, 5.0f);
+        EXPECT_FLOAT_EQ(result.y, 7.0f);
+        EXPECT_FLOAT_EQ(result.z, 9.0f);
     }
 #ifdef __cplusplus
     {
-        HMM_Vec3 result = HMM_Add(v3_1, v3_2);
-        EXPECT_FLOAT_EQ(result.X, 5.0f);
-        EXPECT_FLOAT_EQ(result.Y, 7.0f);
-        EXPECT_FLOAT_EQ(result.Z, 9.0f);
+        Vec3 result = add(v3_1, v3_2);
+        EXPECT_FLOAT_EQ(result.x, 5.0f);
+        EXPECT_FLOAT_EQ(result.y, 7.0f);
+        EXPECT_FLOAT_EQ(result.z, 9.0f);
     }
     {
-        HMM_Vec3 result = v3_1 + v3_2;
-        EXPECT_FLOAT_EQ(result.X, 5.0f);
-        EXPECT_FLOAT_EQ(result.Y, 7.0f);
-        EXPECT_FLOAT_EQ(result.Z, 9.0f);
+        Vec3 result = v3_1 + v3_2;
+        EXPECT_FLOAT_EQ(result.x, 5.0f);
+        EXPECT_FLOAT_EQ(result.y, 7.0f);
+        EXPECT_FLOAT_EQ(result.z, 9.0f);
     }
 
     v3_1 += v3_2;
-    EXPECT_FLOAT_EQ(v3_1.X, 5.0f);
-    EXPECT_FLOAT_EQ(v3_1.Y, 7.0f);
-    EXPECT_FLOAT_EQ(v3_1.Z, 9.0f);
+    EXPECT_FLOAT_EQ(v3_1.x, 5.0f);
+    EXPECT_FLOAT_EQ(v3_1.y, 7.0f);
+    EXPECT_FLOAT_EQ(v3_1.z, 9.0f);
 #endif
 }
 
 TEST(Addition, Vec4)
 {
-    HMM_Vec4 v4_1 = HMM_V4(1.0f, 2.0f, 3.0f, 4.0f);
-    HMM_Vec4 v4_2 = HMM_V4(5.0f, 6.0f, 7.0f, 8.0f);
+    Vec4 v4_1 = V4(1.0f, 2.0f, 3.0f, 4.0f);
+    Vec4 v4_2 = V4(5.0f, 6.0f, 7.0f, 8.0f);
 
     {
-        HMM_Vec4 result = HMM_AddV4(v4_1, v4_2);
-        EXPECT_FLOAT_EQ(result.X, 6.0f);
-        EXPECT_FLOAT_EQ(result.Y, 8.0f);
-        EXPECT_FLOAT_EQ(result.Z, 10.0f);
-        EXPECT_FLOAT_EQ(result.W, 12.0f);
+        Vec4 result = add_v4(v4_1, v4_2);
+        EXPECT_FLOAT_EQ(result.x, 6.0f);
+        EXPECT_FLOAT_EQ(result.y, 8.0f);
+        EXPECT_FLOAT_EQ(result.z, 10.0f);
+        EXPECT_FLOAT_EQ(result.w, 12.0f);
     }
 #ifdef __cplusplus
     {
-        HMM_Vec4 result = HMM_Add(v4_1, v4_2);
-        EXPECT_FLOAT_EQ(result.X, 6.0f);
-        EXPECT_FLOAT_EQ(result.Y, 8.0f);
-        EXPECT_FLOAT_EQ(result.Z, 10.0f);
-        EXPECT_FLOAT_EQ(result.W, 12.0f);
+        Vec4 result = add(v4_1, v4_2);
+        EXPECT_FLOAT_EQ(result.x, 6.0f);
+        EXPECT_FLOAT_EQ(result.y, 8.0f);
+        EXPECT_FLOAT_EQ(result.z, 10.0f);
+        EXPECT_FLOAT_EQ(result.w, 12.0f);
     }
     {
-        HMM_Vec4 result = v4_1 + v4_2;
-        EXPECT_FLOAT_EQ(result.X, 6.0f);
-        EXPECT_FLOAT_EQ(result.Y, 8.0f);
-        EXPECT_FLOAT_EQ(result.Z, 10.0f);
-        EXPECT_FLOAT_EQ(result.W, 12.0f);
+        Vec4 result = v4_1 + v4_2;
+        EXPECT_FLOAT_EQ(result.x, 6.0f);
+        EXPECT_FLOAT_EQ(result.y, 8.0f);
+        EXPECT_FLOAT_EQ(result.z, 10.0f);
+        EXPECT_FLOAT_EQ(result.w, 12.0f);
     }
 
     v4_1 += v4_2;
-    EXPECT_FLOAT_EQ(v4_1.X, 6.0f);
-    EXPECT_FLOAT_EQ(v4_1.Y, 8.0f);
-    EXPECT_FLOAT_EQ(v4_1.Z, 10.0f);
-    EXPECT_FLOAT_EQ(v4_1.W, 12.0f);
+    EXPECT_FLOAT_EQ(v4_1.x, 6.0f);
+    EXPECT_FLOAT_EQ(v4_1.y, 8.0f);
+    EXPECT_FLOAT_EQ(v4_1.z, 10.0f);
+    EXPECT_FLOAT_EQ(v4_1.w, 12.0f);
 #endif
 }
 
 TEST(Addition, Mat2)
 {
-    HMM_Mat2 a = HMM_M2();
-    HMM_Mat2 b = HMM_M2();
+    Mat2 a = M2();
+    Mat2 b = M2();
 
     int Counter = 1;
     for (int Column = 0; Column < 2; ++Column)
     {
         for (int Row = 0; Row < 2; ++Row)
         {
-            a.Elements[Column][Row] = Counter++;
+            a.elements[Column][Row] = Counter++;
         }
     }
     for (int Column = 0; Column < 2; ++Column)
     {
         for (int Row = 0; Row < 2; ++Row)
         {
-            b.Elements[Column][Row] = Counter++;
+            b.elements[Column][Row] = Counter++;
         }
     }
 
     {
-        HMM_Mat2 result = HMM_AddM2(a, b);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 6.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 8.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 10.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 12.0f); 
+        Mat2 result = add_m2(a, b);
+        EXPECT_FLOAT_EQ(result.elements[0][0], 6.0f); 
+        EXPECT_FLOAT_EQ(result.elements[0][1], 8.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][0], 10.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][1], 12.0f); 
     }
 
 #ifdef __cplusplus
     {
-        HMM_Mat2 result = HMM_Add(a, b);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 6.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 8.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 10.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 12.0f); 
+        Mat2 result = add(a, b);
+        EXPECT_FLOAT_EQ(result.elements[0][0], 6.0f); 
+        EXPECT_FLOAT_EQ(result.elements[0][1], 8.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][0], 10.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][1], 12.0f); 
     }
     {
-        HMM_Mat2 result = a + b;
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 6.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 8.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 10.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 12.0f); 
+        Mat2 result = a + b;
+        EXPECT_FLOAT_EQ(result.elements[0][0], 6.0f); 
+        EXPECT_FLOAT_EQ(result.elements[0][1], 8.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][0], 10.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][1], 12.0f); 
     }
     a += b;
-    EXPECT_FLOAT_EQ(a.Elements[0][0], 6.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[0][1], 8.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[1][0], 10.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[1][1], 12.0f); 
+    EXPECT_FLOAT_EQ(a.elements[0][0], 6.0f); 
+    EXPECT_FLOAT_EQ(a.elements[0][1], 8.0f); 
+    EXPECT_FLOAT_EQ(a.elements[1][0], 10.0f); 
+    EXPECT_FLOAT_EQ(a.elements[1][1], 12.0f); 
 #endif
 }
 
 TEST(Addition, Mat3) 
 {
-    HMM_Mat3 a = HMM_M3();
-    HMM_Mat3 b = HMM_M3();
+    Mat3 a = M3();
+    Mat3 b = M3();
 
     int Counter = 1;
     for (int Column = 0; Column < 3; ++Column)
     {
         for (int Row = 0; Row < 3; ++Row)
         {
-            a.Elements[Column][Row] = Counter++;
+            a.elements[Column][Row] = Counter++;
         }
     }
     for (int Column = 0; Column < 3; ++Column)
     {
         for (int Row = 0; Row < 3; ++Row)
         {
-            b.Elements[Column][Row] = Counter++;
+            b.elements[Column][Row] = Counter++;
         }
     }
 
     {
-        HMM_Mat3 result = HMM_AddM3(a, b);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 11.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 13.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 15.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 17.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 19.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 21.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 23.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 25.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 27.0f);   
+        Mat3 result = add_m3(a, b);
+        EXPECT_FLOAT_EQ(result.elements[0][0], 11.0f); 
+        EXPECT_FLOAT_EQ(result.elements[0][1], 13.0f); 
+        EXPECT_FLOAT_EQ(result.elements[0][2], 15.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][0], 17.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][1], 19.0f);
+        EXPECT_FLOAT_EQ(result.elements[1][2], 21.0f); 
+        EXPECT_FLOAT_EQ(result.elements[2][0], 23.0f); 
+        EXPECT_FLOAT_EQ(result.elements[2][1], 25.0f);
+        EXPECT_FLOAT_EQ(result.elements[2][2], 27.0f);   
     }
 
 #ifdef __cplusplus
     {
-        HMM_Mat3 result = HMM_Add(a, b);
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 11.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 13.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 15.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 17.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 19.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 21.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 23.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 25.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 27.0f);   
+        Mat3 result = add(a, b);
+        EXPECT_FLOAT_EQ(result.elements[0][0], 11.0f); 
+        EXPECT_FLOAT_EQ(result.elements[0][1], 13.0f); 
+        EXPECT_FLOAT_EQ(result.elements[0][2], 15.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][0], 17.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][1], 19.0f);
+        EXPECT_FLOAT_EQ(result.elements[1][2], 21.0f); 
+        EXPECT_FLOAT_EQ(result.elements[2][0], 23.0f); 
+        EXPECT_FLOAT_EQ(result.elements[2][1], 25.0f);
+        EXPECT_FLOAT_EQ(result.elements[2][2], 27.0f);   
     }
     {
-        HMM_Mat3 result = a + b;
-        EXPECT_FLOAT_EQ(result.Elements[0][0], 11.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][1], 13.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[0][2], 15.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][0], 17.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[1][1], 19.0f);
-        EXPECT_FLOAT_EQ(result.Elements[1][2], 21.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][0], 23.0f); 
-        EXPECT_FLOAT_EQ(result.Elements[2][1], 25.0f);
-        EXPECT_FLOAT_EQ(result.Elements[2][2], 27.0f);   
+        Mat3 result = a + b;
+        EXPECT_FLOAT_EQ(result.elements[0][0], 11.0f); 
+        EXPECT_FLOAT_EQ(result.elements[0][1], 13.0f); 
+        EXPECT_FLOAT_EQ(result.elements[0][2], 15.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][0], 17.0f); 
+        EXPECT_FLOAT_EQ(result.elements[1][1], 19.0f);
+        EXPECT_FLOAT_EQ(result.elements[1][2], 21.0f); 
+        EXPECT_FLOAT_EQ(result.elements[2][0], 23.0f); 
+        EXPECT_FLOAT_EQ(result.elements[2][1], 25.0f);
+        EXPECT_FLOAT_EQ(result.elements[2][2], 27.0f);   
     }
     a += b;
-    EXPECT_FLOAT_EQ(a.Elements[0][0], 11.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[0][1], 13.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[0][2], 15.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[1][0], 17.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[1][1], 19.0f);
-    EXPECT_FLOAT_EQ(a.Elements[1][2], 21.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[2][0], 23.0f); 
-    EXPECT_FLOAT_EQ(a.Elements[2][1], 25.0f);
-    EXPECT_FLOAT_EQ(a.Elements[2][2], 27.0f);   
+    EXPECT_FLOAT_EQ(a.elements[0][0], 11.0f); 
+    EXPECT_FLOAT_EQ(a.elements[0][1], 13.0f); 
+    EXPECT_FLOAT_EQ(a.elements[0][2], 15.0f); 
+    EXPECT_FLOAT_EQ(a.elements[1][0], 17.0f); 
+    EXPECT_FLOAT_EQ(a.elements[1][1], 19.0f);
+    EXPECT_FLOAT_EQ(a.elements[1][2], 21.0f); 
+    EXPECT_FLOAT_EQ(a.elements[2][0], 23.0f); 
+    EXPECT_FLOAT_EQ(a.elements[2][1], 25.0f);
+    EXPECT_FLOAT_EQ(a.elements[2][2], 27.0f);   
 #endif  
 }
 
 TEST(Addition, Mat4)
 {
-    HMM_Mat4 m4_1 = HMM_M4(); // will have 1 - 16
-    HMM_Mat4 m4_2 = HMM_M4(); // will have 17 - 32
+    Mat4 m4_1 = M4(); // will have 1 - 16
+    Mat4 m4_2 = M4(); // will have 17 - 32
 
     // Fill the matrices
     int Counter = 1;
@@ -231,7 +231,7 @@ TEST(Addition, Mat4)
     {
         for (int Row = 0; Row < 4; ++Row)
         {
-            m4_1.Elements[Column][Row] = Counter;
+            m4_1.elements[Column][Row] = Counter;
             ++Counter;
         }
     }
@@ -239,45 +239,45 @@ TEST(Addition, Mat4)
     {
         for (int Row = 0; Row < 4; ++Row)
         {
-            m4_2.Elements[Column][Row] = Counter;
+            m4_2.elements[Column][Row] = Counter;
             ++Counter;
         }
     }
 
     // Test the results
     {
-        HMM_Mat4 result = HMM_AddM4(m4_1, m4_2);
+        Mat4 result = add_m4(m4_1, m4_2);
         float Expected = 18.0f;
         for (int Column = 0; Column < 4; ++Column)
         {
             for (int Row = 0; Row < 4; ++Row)
             {
-                EXPECT_FLOAT_EQ(result.Elements[Column][Row], Expected);
+                EXPECT_FLOAT_EQ(result.elements[Column][Row], Expected);
                 Expected += 2.0f;
             }
         }
     }
 #ifdef __cplusplus
     {
-        HMM_Mat4 result = HMM_Add(m4_1, m4_2);
+        Mat4 result = add(m4_1, m4_2);
         float Expected = 18.0f;
         for (int Column = 0; Column < 4; ++Column)
         {
             for (int Row = 0; Row < 4; ++Row)
             {
-                EXPECT_FLOAT_EQ(result.Elements[Column][Row], Expected);
+                EXPECT_FLOAT_EQ(result.elements[Column][Row], Expected);
                 Expected += 2.0f;
             }
         }
     }
     {
-        HMM_Mat4 result = m4_1 + m4_2;
+        Mat4 result = m4_1 + m4_2;
         float Expected = 18.0f;
         for (int Column = 0; Column < 4; ++Column)
         {
             for (int Row = 0; Row < 4; ++Row)
             {
-                EXPECT_FLOAT_EQ(result.Elements[Column][Row], Expected);
+                EXPECT_FLOAT_EQ(result.elements[Column][Row], Expected);
                 Expected += 2.0f;
             }
         }
@@ -289,7 +289,7 @@ TEST(Addition, Mat4)
     {
         for (int Row = 0; Row < 4; ++Row)
         {
-            EXPECT_FLOAT_EQ(m4_1.Elements[Column][Row], Expected);
+            EXPECT_FLOAT_EQ(m4_1.elements[Column][Row], Expected);
             Expected += 2.0f;
         }
     }
@@ -298,36 +298,36 @@ TEST(Addition, Mat4)
 
 TEST(Addition, Quaternion)
 {
-    HMM_Quat q1 = HMM_Q(1.0f, 2.0f, 3.0f, 4.0f);
-    HMM_Quat q2 = HMM_Q(5.0f, 6.0f, 7.0f, 8.0f);
+    Quat q1 = Q(1.0f, 2.0f, 3.0f, 4.0f);
+    Quat q2 = Q(5.0f, 6.0f, 7.0f, 8.0f);
 
     {
-        HMM_Quat result = HMM_AddQ(q1, q2);
-        EXPECT_FLOAT_EQ(result.X, 6.0f);
-        EXPECT_FLOAT_EQ(result.Y, 8.0f);
-        EXPECT_FLOAT_EQ(result.Z, 10.0f);
-        EXPECT_FLOAT_EQ(result.W, 12.0f);
+        Quat result = add_q(q1, q2);
+        EXPECT_FLOAT_EQ(result.x, 6.0f);
+        EXPECT_FLOAT_EQ(result.y, 8.0f);
+        EXPECT_FLOAT_EQ(result.z, 10.0f);
+        EXPECT_FLOAT_EQ(result.w, 12.0f);
     }
 #ifdef __cplusplus
     {
-        HMM_Quat result = HMM_Add(q1, q2);
-        EXPECT_FLOAT_EQ(result.X, 6.0f);
-        EXPECT_FLOAT_EQ(result.Y, 8.0f);
-        EXPECT_FLOAT_EQ(result.Z, 10.0f);
-        EXPECT_FLOAT_EQ(result.W, 12.0f);
+        Quat result = add(q1, q2);
+        EXPECT_FLOAT_EQ(result.x, 6.0f);
+        EXPECT_FLOAT_EQ(result.y, 8.0f);
+        EXPECT_FLOAT_EQ(result.z, 10.0f);
+        EXPECT_FLOAT_EQ(result.w, 12.0f);
     }
     {
-        HMM_Quat result = q1 + q2;
-        EXPECT_FLOAT_EQ(result.X, 6.0f);
-        EXPECT_FLOAT_EQ(result.Y, 8.0f);
-        EXPECT_FLOAT_EQ(result.Z, 10.0f);
-        EXPECT_FLOAT_EQ(result.W, 12.0f);
+        Quat result = q1 + q2;
+        EXPECT_FLOAT_EQ(result.x, 6.0f);
+        EXPECT_FLOAT_EQ(result.y, 8.0f);
+        EXPECT_FLOAT_EQ(result.z, 10.0f);
+        EXPECT_FLOAT_EQ(result.w, 12.0f);
     }
 
     q1 += q2;
-    EXPECT_FLOAT_EQ(q1.X, 6.0f);
-    EXPECT_FLOAT_EQ(q1.Y, 8.0f);
-    EXPECT_FLOAT_EQ(q1.Z, 10.0f);
-    EXPECT_FLOAT_EQ(q1.W, 12.0f);
+    EXPECT_FLOAT_EQ(q1.x, 6.0f);
+    EXPECT_FLOAT_EQ(q1.y, 8.0f);
+    EXPECT_FLOAT_EQ(q1.z, 10.0f);
+    EXPECT_FLOAT_EQ(q1.w, 12.0f);
 #endif
 }

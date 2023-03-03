@@ -4,82 +4,82 @@ TEST(Projection, Orthographic)
 {
 #define ORTHO_BOUNDS -8.0f, 12.0f, 5.0f, 10.0f, 1.0f, 100.0f
 
-    // Right-handed
+    // right-handed
     {
-        // Near and far distances correspond to negative Z, hence the Z coordinates here are negative.
-        HMM_Vec4 minCorner = HMM_V4(-8.0f, 5.0f, -1.0f, 1.0);
-        HMM_Vec4 maxCorner = HMM_V4(12.0f, 10.0f, -100.0f, 1.0);
+        // Near and far distances correspond to negative z, hence the z coordinates here are negative.
+        Vec4 minCorner = V4(-8.0f, 5.0f, -1.0f, 1.0);
+        Vec4 maxCorner = V4(12.0f, 10.0f, -100.0f, 1.0);
 
-        // Z from -1 to 1 (GL convention)
+        // z from -1 to 1 (GL convention)
         {
-            HMM_Mat4 projection = HMM_Orthographic_RH_NO(ORTHO_BOUNDS);
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, minCorner), HMM_V4(-1.0f, -1.0f, -1.0f, 1.0f));
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, maxCorner), HMM_V4(1.0f, 1.0f, 1.0f, 1.0f));
+            Mat4 projection = orthographic_rh_no(ORTHO_BOUNDS);
+            EXPECT_V4_EQ(mul_m4v4(projection, minCorner), V4(-1.0f, -1.0f, -1.0f, 1.0f));
+            EXPECT_V4_EQ(mul_m4v4(projection, maxCorner), V4(1.0f, 1.0f, 1.0f, 1.0f));
         }
 
-        // Z from 0 to 1 (DX convention)
+        // z from 0 to 1 (DX convention)
         {
-            HMM_Mat4 projection = HMM_Orthographic_RH_ZO(ORTHO_BOUNDS);
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, minCorner), HMM_V4(-1.0f, -1.0f, 0.0f, 1.0f));
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, maxCorner), HMM_V4(1.0f, 1.0f, 1.0f, 1.0f));
+            Mat4 projection = orthographic_rh_zo(ORTHO_BOUNDS);
+            EXPECT_V4_EQ(mul_m4v4(projection, minCorner), V4(-1.0f, -1.0f, 0.0f, 1.0f));
+            EXPECT_V4_EQ(mul_m4v4(projection, maxCorner), V4(1.0f, 1.0f, 1.0f, 1.0f));
         }
     }
 
-    // Left-handed
+    // left-handed
     {
-        // Near and far distances correspond to positive Z, hence the Z coordinates here are positive.
-        HMM_Vec4 minCorner = HMM_V4(-8.0f, 5.0f, 1.0f, 1.0);
-        HMM_Vec4 maxCorner = HMM_V4(12.0f, 10.0f, 100.0f, 1.0);
+        // Near and far distances correspond to positive z, hence the z coordinates here are positive.
+        Vec4 minCorner = V4(-8.0f, 5.0f, 1.0f, 1.0);
+        Vec4 maxCorner = V4(12.0f, 10.0f, 100.0f, 1.0);
 
-        // Z from -1 to 1 (GL convention)
+        // z from -1 to 1 (GL convention)
         {
-            HMM_Mat4 projection = HMM_Orthographic_LH_NO(ORTHO_BOUNDS);
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, minCorner), HMM_V4(-1.0f, -1.0f, -1.0f, 1.0f));
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, maxCorner), HMM_V4(1.0f, 1.0f, 1.0f, 1.0f));
+            Mat4 projection = orthographic_lh_no(ORTHO_BOUNDS);
+            EXPECT_V4_EQ(mul_m4v4(projection, minCorner), V4(-1.0f, -1.0f, -1.0f, 1.0f));
+            EXPECT_V4_EQ(mul_m4v4(projection, maxCorner), V4(1.0f, 1.0f, 1.0f, 1.0f));
         }
 
-        // Z from 0 to 1 (DX convention)
+        // z from 0 to 1 (DX convention)
         {
-            HMM_Mat4 projection = HMM_Orthographic_LH_ZO(ORTHO_BOUNDS);
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, minCorner), HMM_V4(-1.0f, -1.0f, 0.0f, 1.0f));
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, maxCorner), HMM_V4(1.0f, 1.0f, 1.0f, 1.0f));
+            Mat4 projection = orthographic_lh_zo(ORTHO_BOUNDS);
+            EXPECT_V4_EQ(mul_m4v4(projection, minCorner), V4(-1.0f, -1.0f, 0.0f, 1.0f));
+            EXPECT_V4_EQ(mul_m4v4(projection, maxCorner), V4(1.0f, 1.0f, 1.0f, 1.0f));
         }
     }
 }
 
 TEST(Projection, Perspective)
 {
-    // Right-handed
+    // right-handed
     {
-        // Z from -1 to 1 (GL convention)
+        // z from -1 to 1 (GL convention)
         {
-            HMM_Mat4 projection = HMM_Perspective_RH_NO(HMM_AngleDeg(90.0f), 2.0f, 1.0f, 15.0f);
-            HMM_Vec4 original = HMM_V4(5.0f, 5.0f, -1.0f, 1.0f);
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, original), HMM_V4(2.5f, 5.0f, -1.0f, 1.0f));
+            Mat4 projection = perspective_rh_no(angle_deg(90.0f), 2.0f, 1.0f, 15.0f);
+            Vec4 original = V4(5.0f, 5.0f, -1.0f, 1.0f);
+            EXPECT_V4_EQ(mul_m4v4(projection, original), V4(2.5f, 5.0f, -1.0f, 1.0f));
         }
 
-        // Z from 0 to 1 (DX convention)
+        // z from 0 to 1 (DX convention)
         {
-            HMM_Mat4 projection = HMM_Perspective_RH_ZO(HMM_AngleDeg(90.0f), 2.0f, 1.0f, 15.0f);
-            HMM_Vec4 original = HMM_V4(5.0f, 5.0f, -1.0f, 1.0f);
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, original), HMM_V4(2.5f, 5.0f, 0.0f, 1.0f));
+            Mat4 projection = perspective_rh_zo(angle_deg(90.0f), 2.0f, 1.0f, 15.0f);
+            Vec4 original = V4(5.0f, 5.0f, -1.0f, 1.0f);
+            EXPECT_V4_EQ(mul_m4v4(projection, original), V4(2.5f, 5.0f, 0.0f, 1.0f));
         }
     }
 
-    // Left-handed
+    // left-handed
     {
-        // Z from -1 to 1 (GL convention)
+        // z from -1 to 1 (GL convention)
         {
-            HMM_Mat4 projection = HMM_Perspective_LH_NO(HMM_AngleDeg(90.0f), 2.0f, 1.0f, 15.0f);
-            HMM_Vec4 original = HMM_V4(5.0f, 5.0f, 1.0f, 1.0f);
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, original), HMM_V4(2.5f, 5.0f, -1.0f, 1.0f));
+            Mat4 projection = perspective_lh_no(angle_deg(90.0f), 2.0f, 1.0f, 15.0f);
+            Vec4 original = V4(5.0f, 5.0f, 1.0f, 1.0f);
+            EXPECT_V4_EQ(mul_m4v4(projection, original), V4(2.5f, 5.0f, -1.0f, 1.0f));
         }
 
-        // Z from 0 to 1 (DX convention)
+        // z from 0 to 1 (DX convention)
         {
-            HMM_Mat4 projection = HMM_Perspective_LH_ZO(HMM_AngleDeg(90.0f), 2.0f, 1.0f, 15.0f);
-            HMM_Vec4 original = HMM_V4(5.0f, 5.0f, 1.0f, 1.0f);
-            EXPECT_V4_EQ(HMM_MulM4V4(projection, original), HMM_V4(2.5f, 5.0f, 0.0f, 1.0f));
+            Mat4 projection = perspective_lh_zo(angle_deg(90.0f), 2.0f, 1.0f, 15.0f);
+            Vec4 original = V4(5.0f, 5.0f, 1.0f, 1.0f);
+            EXPECT_V4_EQ(mul_m4v4(projection, original), V4(2.5f, 5.0f, 0.0f, 1.0f));
         }
     }
 }
